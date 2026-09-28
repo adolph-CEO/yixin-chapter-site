@@ -38,6 +38,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <div aria-hidden className="side-rail">
           {Array.from({ length: 24 }, (_, i) => <span key={i}>TAINAN BNI</span>)}
         </div>
+        {/* 品牌色帶：放在頁首之外（頁首的背景模糊會把 fixed 元素困在頁首裡），固定在最上層、橫跨整個畫面，蓋過左側長條 */}
+        <div aria-hidden className="fixed top-0 left-0 right-0 z-[70] h-1 bg-indigo"><div className="h-full w-1/4 bg-accent" /></div>
+        <div aria-hidden className="side-mark"><span>BNI</span></div>
         <Header />
         <main id="main" className="flex-1">{children}</main>
         <Footer />

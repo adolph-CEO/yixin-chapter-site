@@ -13,9 +13,7 @@ export default function Header() {
   const path = usePathname();
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-50 bg-paper/95 backdrop-blur border-b border-line">
-      {/* 品牌色帶：靛藍為底，藏紅一段 */}
-      <div aria-hidden className="h-1 bg-indigo"><div className="h-full w-1/4 bg-accent" /></div>
+    <header className="sticky top-0 z-50 bg-paper/95 backdrop-blur border-b border-line pt-1">
       <div className="mx-auto max-w-7xl px-4 md:px-8 h-16 md:h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <span aria-hidden className="flex flex-col gap-[3px]"><span className="block w-2.5 h-2.5 bg-accent" /><span className="block w-2.5 h-2.5 bg-indigo" /></span>

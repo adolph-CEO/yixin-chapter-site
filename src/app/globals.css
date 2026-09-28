@@ -94,8 +94,8 @@ h1, h2, h3, h4, .headline { font-family: var(--font-serif); }
 /* 鍵盤操作時看得到焦點 */
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
-/* 左側點綴長條：寬度隨螢幕縮放（手機約 12px，桌機約 18px，上限 20px），內容往右讓出同樣寬度 */
-:root { --rail: clamp(12px, 1.25vw, 20px); --rail-bg: #e3e3e1; }
+/* 左側點綴長條：寬度隨螢幕縮放（手機約 14px，桌機約 22px，上限 24px），內容往右讓出同樣寬度 */
+:root { --rail: clamp(14.4px, 1.5vw, 24px); --rail-bg: #f6f6f5; }
 body { padding-left: var(--rail); }
 .side-rail {
   position: fixed; inset: 0 auto 0 0; width: var(--rail); z-index: 60;
@@ -107,4 +107,18 @@ body { padding-left: var(--rail); }
   font-family: var(--font-display); font-weight: 500;
   font-size: calc(var(--rail) * 0.58); letter-spacing: 0.32em; line-height: 1;
   color: #8f9399; white-space: nowrap; flex: none;
+}
+
+/* 右側大字浮水印：直排「BNI」，字頭朝左、字底朝右，底部約 15% 超出畫面右緣被裁掉
+   用 multiply 疊色：白底上是極淡的灰，紅底、靛藍底上只是稍微加深，不會變成一塊亮白字 */
+.side-mark {
+  position: fixed; inset: 0; z-index: 55; overflow: hidden; pointer-events: none;
+}
+.side-mark span {
+  --mark: clamp(160px, 21vw, 300px);
+  position: absolute; top: 50%;
+  right: calc(var(--mark) * -0.2);
+  writing-mode: vertical-rl; transform: translateY(-50%) rotate(180deg); /* 旋轉後字頭朝左、字底朝右 */
+  font-family: var(--font-display); font-weight: 600; font-size: var(--mark); line-height: 1;
+  letter-spacing: 0.04em; color: #f1f1ef; mix-blend-mode: multiply; user-select: none;
 }
