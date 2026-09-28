@@ -9,7 +9,7 @@ roles:
   sample-design-01: 辦公區室內規劃
 tags: [Power Team, 範例]
 cover: ""
-heroImage: ""
+heroImage: "/images/cases/sample-case-01-hero.webp"
 heroImageMobile: ""
 featured: true
 featuredOrder: 1

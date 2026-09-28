@@ -67,21 +67,24 @@ export default function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                   <div className="absolute right-0 bottom-0 w-[86%] h-[72%] md:w-full md:h-[74%] bg-indigo">
                     <span className="absolute left-0 top-0 h-1 w-1/3 bg-accent" />
                   </div>
-                  <picture>
-                    {s.heroImageMobile && <source media="(max-width: 767px)" srcSet={s.heroImageMobile} />}
-                    <img
-                      src={s.heroImage || "/placeholder/person.svg"}
-                      alt=""
-                      className="absolute bottom-0 right-[12%] md:right-[16%] h-[96%] md:h-[92%] w-auto object-contain object-bottom"
-                    />
-                  </picture>
+                  {/* 人物圖限制在圖像區內置中：多人合照再寬也不會撞到左邊的標題 */}
+                  <div className="absolute inset-0 flex items-end justify-center md:pl-[4%]">
+                    <picture className="contents">
+                      {s.heroImageMobile && <source media="(max-width: 767px)" srcSet={s.heroImageMobile} />}
+                      <img
+                        src={s.heroImage || "/placeholder/person.svg"}
+                        alt=""
+                        className="h-[96%] md:h-[92%] w-auto max-w-full object-contain object-bottom"
+                      />
+                    </picture>
+                  </div>
                   {!s.heroImage && (
                     <span className="eyebrow absolute right-3 bottom-3 text-white/40">去背人物圖待置換</span>
                   )}
                 </div>
 
                 {/* 文字區 */}
-                <div className="absolute inset-x-0 bottom-20 md:bottom-auto md:top-1/2 md:-translate-y-1/2 md:w-[48%]">
+                <div className="absolute z-10 inset-x-0 bottom-20 md:bottom-auto md:top-1/2 md:-translate-y-1/2 md:w-[48%]">
                   <div className="eyebrow text-accent">Case {pad(idx + 1)} · Power Team {s.memberCount} 人協作</div>
                   <h1 className="headline text-[2rem] leading-[1.18] md:text-6xl md:leading-[1.15] mt-4">{s.title}</h1>
                   <p className="mt-5 text-muted leading-8 max-w-md line-clamp-2 md:line-clamp-none">{s.summary}</p>
