@@ -5,7 +5,7 @@ import { IndustryTag, PartnerTag, PlainTag } from "@/components/Tags";
 export const metadata: Metadata = { title: "視覺規範", robots: { index: false } };
 
 const BRAND = [
-  { name: "藏紅", hex: "#A3243B", token: "--accent", use: "行動與強調：主要按鈕、產業標籤、分隔短線、進度條。面積控制在一成以內，越少越有力。", fg: "#fff" },
+  { name: "藏紅", hex: "#A3243B", token: "--accent", use: "行動與強調：主要按鈕、產業標籤、分隔短線、進度條。面積控制在一成以內，越少越有力；唯一的大面積例外是首頁的會員、案例、教育色帶。", fg: "#fff" },
   { name: "靛藍", hex: "#1F3A68", token: "--indigo", use: "結構與信任：品牌字、次要按鈕、選中狀態、夥伴標籤。", fg: "#fff" },
   { name: "靛藍深", hex: "#13244A", token: "--dark", use: "深色區塊：首頁三大分區、頁尾、分會即品牌 Hero、投影模式。", fg: "#fff" },
 ];

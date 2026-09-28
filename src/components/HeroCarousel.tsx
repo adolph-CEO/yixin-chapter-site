@@ -60,7 +60,7 @@ export default function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
       const mobile = window.innerWidth < 768;
       // 下沉有上限：只跨進下一區塊的上緣，不蓋到卡片文字
       // 手機版人物下方就是標題，改成往上浮，拉開距離而不是壓到文字
-      const sink = mobile ? -Math.min(y * 0.12, 80) : Math.min(y * 0.38, 220);
+      const sink = mobile ? -Math.min(y * 0.12, 80) : Math.min(y * 0.3, 90);
       if (imgLayer.current) imgLayer.current.style.transform = `translate3d(0,${sink}px,0)`;
       if (textLayer.current) textLayer.current.style.transform = `translate3d(0,${mobile ? 0 : -y * 0.12}px,0)`;
       if (numLayer.current) numLayer.current.style.transform = `translate3d(0,${y * 0.2}px,0)`;
