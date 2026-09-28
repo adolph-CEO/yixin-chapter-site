@@ -6,7 +6,7 @@ export type Tile = { href: string; label: string; en: string; desc: string; imag
 /** 首頁三大區塊：桌機三欄；手機改成橫向滑動的矮卡片，避免三張高圖一路往下疊 */
 export default function SectionTiles({ tiles }: { tiles: Tile[] }) {
   return (
-    <section className="bg-dark">
+    <section className="relative z-0 bg-dark">
       <div className="flex md:grid md:grid-cols-3 overflow-x-auto snap-x snap-mandatory no-scrollbar">
         {tiles.map((t, i) => (
           <Link key={t.href} href={t.href}
