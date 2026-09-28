@@ -64,9 +64,6 @@ export default function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
 
                 {/* 圖像區：外框 + 破框人物 */}
                 <div className="absolute inset-x-0 top-0 h-[54%] md:inset-x-auto md:right-0 md:top-0 md:h-full md:w-[56%]">
-                  <div className="absolute right-0 bottom-0 w-[86%] h-[72%] md:w-full md:h-[74%] bg-indigo">
-                    <span className="absolute left-0 top-0 h-1 w-1/3 bg-accent" />
-                  </div>
                   {/* 人物圖限制在圖像區內置中：多人合照再寬也不會撞到左邊的標題 */}
                   <div className="absolute inset-0 flex items-end justify-center md:pl-[4%]">
                     <picture className="contents">
@@ -79,7 +76,7 @@ export default function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                     </picture>
                   </div>
                   {!s.heroImage && (
-                    <span className="eyebrow absolute right-3 bottom-3 text-white/40">去背人物圖待置換</span>
+                    <span className="eyebrow absolute right-3 bottom-3 text-black/35">去背人物圖待置換</span>
                   )}
                 </div>
 
