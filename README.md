@@ -28,7 +28,7 @@ npm run build    # 上線前先確認建置會過
 複製 `content/members/sample-engineering-01.md`，改檔名和欄位即可。
 
 - `industry` 必須是 `site.json` 裡 `industries` 的其中一個，篩選和上一位、下一位才會正確
-- `order` 決定排列順序
+- 排列順序自動依姓氏筆畫（台灣教育部標準字體），少的在前；同姓的排在一起，再依名字逐字筆畫。筆畫資料在 `src/lib/strokes-tw.json`，新會員名字有表中沒有的字時，建置會提醒補上（`order` 欄位已不影響排序）
 - `skills` 每一項寫 `name`（名稱）和 `desc`（一句說明），會顯示成兩欄卡片；只寫名稱也可以
 - `seekingPartners` 是「想找的合作夥伴」，會用黑色標籤醒目顯示
 - `contact` 留空的欄位不會顯示

@@ -6,7 +6,7 @@ import PrevNext from "@/components/PrevNext";
 import { Block, Column } from "@/components/Detail";
 import { IndustryTag, PartnerTag, PlainTag, TagRow } from "@/components/Tags";
 import JsonLd from "@/components/JsonLd";
-import { getCases, getEducation, getMembers, industriesOf, neighbors, pad2 } from "@/lib/content";
+import { getCases, getEducation, getMembers, industriesOf, neighbors, pad2, sortByStrokes } from "@/lib/content";
 import { breadcrumb, caseArticle } from "@/lib/schema";
 
 export function generateStaticParams() {
@@ -31,7 +31,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
   if (idx < 0) notFound();
   const c = cases[idx];
   const all = getMembers();
-  const members = c.members.map((s) => all.find((m) => m.slug === s)).filter((m): m is NonNullable<typeof m> => !!m);
+  const members = sortByStrokes(c.members.map((s) => all.find((m) => m.slug === s)).filter((m): m is NonNullable<typeof m> => !!m));
   const industries = industriesOf(c.members, all);
   const lessons = getEducation().filter((e) => e.relatedCases.includes(c.slug));
   const { prev, next } = neighbors(cases, idx);

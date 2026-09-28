@@ -6,7 +6,7 @@ import PrevNext from "@/components/PrevNext";
 import { Block, Column } from "@/components/Detail";
 import { IndustryTag, PartnerTag, PlainTag, TagRow } from "@/components/Tags";
 import JsonLd from "@/components/JsonLd";
-import { getCases, getEducation, getMembers, industriesOf, neighbors, pad2 } from "@/lib/content";
+import { getCases, getEducation, getMembers, industriesOf, neighbors, pad2, sortByStrokes } from "@/lib/content";
 import { breadcrumb, lessonArticle } from "@/lib/schema";
 
 export function generateStaticParams() {
@@ -33,7 +33,7 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
   const all = getMembers();
   const related = getCases().filter((c) => e.relatedCases.includes(c.slug));
   const memberSlugs = [...new Set(related.flatMap((c) => c.members))];
-  const members = memberSlugs.map((s) => all.find((m) => m.slug === s)).filter((m): m is NonNullable<typeof m> => !!m);
+  const members = sortByStrokes(memberSlugs.map((s) => all.find((m) => m.slug === s)).filter((m): m is NonNullable<typeof m> => !!m));
   const industries = industriesOf(memberSlugs, all);
   const { prev: newer, next: older } = neighbors(list, idx);
 

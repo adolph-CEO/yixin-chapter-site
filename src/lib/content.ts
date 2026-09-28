@@ -3,6 +3,7 @@ import path from "node:path";
 import matter from "gray-matter";
 import { marked } from "marked";
 import site from "../../content/site.json";
+import STROKES from "./strokes-tw.json";
 
 export { site };
 
@@ -82,7 +83,7 @@ const arr = (v: unknown) => (Array.isArray(v) ? v.map(String) : []);
 const str = (v: unknown) => (v == null ? "" : String(v));
 
 export function getMembers(): Member[] {
-  return readDir("members", (slug, d, body) => ({
+  const list = readDir("members", (slug, d, body) => ({
     slug,
     name: str(d.name),
     company: str(d.company),
@@ -98,7 +99,39 @@ export function getMembers(): Member[] {
     valueFuture: str(d.valueFuture),
     contact: (d.contact as Contact) ?? {},
     html: marked.parse(body) as string,
-  })).sort((a, b) => a.order - b.order || a.name.localeCompare(b.name, "zh-Hant"));
+  }));
+  return sortByStrokes(list);
+}
+
+/**
+ * 會員一律依姓氏筆畫排序（台灣教育部標準字體筆畫，資料在 strokes-tw.json）：
+ * (1) 姓氏筆畫少的在前 (2) 同姓的放在一起，再依名字逐字筆畫 (3) 不同姓但筆畫相同，依名字逐字筆畫
+ * 新會員名字裡若有表中沒有的字，建置時會提醒補上筆畫
+ */
+const stroke = (c: string) => {
+  const n = (STROKES as Record<string, number>)[c];
+  if (n == null) console.warn(`[筆畫] 缺少「${c}」的筆畫資料，請補到 src/lib/strokes-tw.json`);
+  return n ?? 99;
+};
+const givenKey = (name: string) => [...name.slice(1)].map(stroke);
+const cmpArr = (a: number[], b: number[]) => {
+  for (let i = 0; i < Math.max(a.length, b.length); i++) { const d = (a[i] ?? 0) - (b[i] ?? 0); if (d) return d; }
+  return 0;
+};
+export function sortByStrokes<T extends { name: string }>(list: T[]): T[] {
+  // 每個姓氏的代表鍵：該姓氏中名字筆畫最小的那位，讓同姓的人排在一起
+  const best = new Map<string, number[]>();
+  for (const m of list) {
+    const s = m.name[0], k = givenKey(m.name);
+    const cur = best.get(s);
+    if (!cur || cmpArr(k, cur) < 0) best.set(s, k);
+  }
+  return [...list].sort((a, b) =>
+    stroke(a.name[0]) - stroke(b.name[0]) ||
+    cmpArr(best.get(a.name[0])!, best.get(b.name[0])!) ||
+    a.name[0].localeCompare(b.name[0], "zh-Hant") ||
+    cmpArr(givenKey(a.name), givenKey(b.name))
+  );
 }
 
 export function getCases(): Case[] {
@@ -175,8 +208,9 @@ export function partnersOf(slug: string, cases: Case[] = getCases(), members: Me
   cases.filter((c) => c.members.includes(slug)).forEach((c) =>
     c.members.filter((s) => s !== slug).forEach((s) => count.set(s, (count.get(s) ?? 0) + 1))
   );
-  return [...count.entries()]
+  const list = [...count.entries()]
     .map(([s, n]) => ({ member: members.find((m) => m.slug === s), times: n }))
-    .filter((x): x is { member: Member; times: number } => !!x.member)
-    .sort((a, b) => b.times - a.times);
+    .filter((x): x is { member: Member; times: number } => !!x.member);
+  const order = sortByStrokes(members).map((m) => m.slug);
+  return list.sort((a, b) => order.indexOf(a.member.slug) - order.indexOf(b.member.slug));
 }
