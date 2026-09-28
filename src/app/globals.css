@@ -93,3 +93,18 @@ h1, h2, h3, h4, .headline { font-family: var(--font-serif); }
 
 /* 鍵盤操作時看得到焦點 */
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* 左側點綴長條：寬度隨螢幕縮放（手機約 12px，桌機約 18px，上限 20px），內容往右讓出同樣寬度 */
+:root { --rail: clamp(12px, 1.25vw, 20px); --rail-bg: #e3e3e1; }
+body { padding-left: var(--rail); }
+.side-rail {
+  position: fixed; inset: 0 auto 0 0; width: var(--rail); z-index: 60;
+  background: var(--rail-bg); overflow: hidden; pointer-events: none;
+  display: flex; flex-direction: column; align-items: center; gap: 100px; padding-top: 24px;
+}
+.side-rail span {
+  writing-mode: vertical-rl; /* 字頭朝右、字底朝左 */
+  font-family: var(--font-display); font-weight: 500;
+  font-size: calc(var(--rail) * 0.58); letter-spacing: 0.32em; line-height: 1;
+  color: #8f9399; white-space: nowrap; flex: none;
+}

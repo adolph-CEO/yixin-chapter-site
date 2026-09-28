@@ -35,6 +35,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[200] focus:bg-indigo focus:text-white focus:px-4 focus:py-2">
           跳到主要內容
         </a>
+        <div aria-hidden className="side-rail">
+          {Array.from({ length: 24 }, (_, i) => <span key={i}>TAINAN BNI</span>)}
+        </div>
         <Header />
         <main id="main" className="flex-1">{children}</main>
         <Footer />
