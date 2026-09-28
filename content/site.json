@@ -1,0 +1,31 @@
+{
+  "url": "https://yixin-chapter.vercel.app",
+  "chapterName": "億鑫分會",
+  "chapterNameEn": "YIXIN CHAPTER",
+  "tagline": "分會即品牌",
+  "description": "一群願意把客戶交給彼此的專業人士。我們用 Power Team 協作，讓每位會員的事業一起成長。",
+  "meeting": {
+    "day": "每週（待填）",
+    "time": "07:00 至 09:00（待填）",
+    "place": "台南（地點待填）"
+  },
+  "guestCta": {
+    "title": "來一場例會，看我們怎麼幫彼此做生意",
+    "note": "來賓參加免費，請先預約，我們會依你的產業安排對應的會員接待。",
+    "buttonLabel": "預約參加例會",
+    "url": "#"
+  },
+  "brandHero": {
+    "title": "分會即品牌",
+    "subtitle": "第四屆代表影像",
+    "video": "",
+    "image": ""
+  },
+  "industries": [
+    "工程營建",
+    "設計裝修",
+    "專業服務",
+    "健康醫療",
+    "行銷科技"
+  ]
+}
