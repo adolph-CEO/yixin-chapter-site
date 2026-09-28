@@ -86,7 +86,8 @@ export default function BrandPage() {
 
       <Block title="字體">
         <div className="space-y-4">
-          <div className="headline text-4xl">標題 Noto Sans TC 900</div>
+          <div className="headline text-4xl">標題 Noto Serif TC 900</div>
+          <p className="text-sm text-muted">H1 到 H4 與所有大標一律使用襯線體，給分會一點書卷氣與份量；內文用無襯線體，長文好讀。</p>
           <div className="text-lg">內文 Noto Sans TC 400，行高 1.95，讓長文讀起來不累。</div>
           <div className="eyebrow text-accent">Oswald · English Label & Numbers 01 / 04</div>
         </div>

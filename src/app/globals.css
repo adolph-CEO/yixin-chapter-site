@@ -32,6 +32,7 @@
   --color-indigo: var(--indigo);
   --color-indigo-soft: var(--indigo-soft);
   --font-sans: "Noto Sans TC", "Noto Sans CJK TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --font-serif: "Noto Serif TC", "Noto Serif CJK TC", "PMingLiU", serif;
   --font-display: "Oswald", "Noto Sans TC", sans-serif;
 }
 
@@ -44,6 +45,8 @@ body {
 }
 
 /* 中文標題的張力：極粗字重 + 收緊行高 + 微拉字距 */
+/* 標題 H1 到 H4 一律用 Noto Serif TC，內文維持 Noto Sans TC */
+h1, h2, h3, h4, .headline { font-family: var(--font-serif); }
 .headline {
   font-weight: 900;
   line-height: 1.12;
