@@ -78,7 +78,7 @@ export default function BrandPage() {
         </div>
         <div className="mt-6 flex flex-wrap gap-2 items-center">
           <IndustryTag name="工程營建" />
-          <PartnerTag slug="sample-engineering-01" name="範例會員 01" />
+          <PartnerTag slug="chen-hong-qi" name="陳鋐豈" />
           <span className="rounded-full bg-indigo text-white px-3 py-1 text-xs font-bold">想找的夥伴</span>
           <PlainTag name="Power Team" />
         </div>

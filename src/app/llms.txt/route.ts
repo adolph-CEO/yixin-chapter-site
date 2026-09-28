@@ -14,11 +14,18 @@ export function GET() {
     "",
     "## 會員",
     ...members.map((m) =>
-      `- [${m.name}｜${m.company}](${abs(`/members/${m.slug}`)})：${m.industry}，專長${m.specialty}。擅長${m.skills.map((s) => s.name).join("、")}。想找的合作夥伴：${m.seekingPartners.join("、")}。`
+      [
+        `- [${m.name}｜${m.company}](${abs(`/members/${m.slug}`)})：${m.industry}，專業代表：${m.specialty}。`,
+        m.skills.length ? `擅長${m.skills.map((s) => s.name).join("、")}。` : "",
+        m.seekingPartners.length ? `想找的合作夥伴：${m.seekingPartners.join("、")}。` : "",
+      ].join("")
     ),
     "",
     "## Power Team 協作案例",
-    ...getCases().map((c) => `- [${c.title}](${abs(`/cases/${c.slug}`)})：${c.summary}（跨產業：${industriesOf(c.members, members).join("、")}）`),
+    ...getCases().map((c) => {
+      const inds = industriesOf(c.members, members);
+      return `- [${c.title}](${abs(`/cases/${c.slug}`)})：${c.summary}${inds.length ? `（跨產業：${inds.join("、")}）` : ""}`;
+    }),
     "",
     "## 每週 BNI 商務價值教育",
     ...getEducation().map((e) => `- [第 ${e.week} 週｜${e.title}](${abs(`/education/${e.slug}`)})：${e.summary}（出處：The Official BNI Podcast Episode ${e.podcast.episode}）`),

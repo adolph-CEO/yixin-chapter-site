@@ -2,10 +2,8 @@
 title: 舊屋翻新，收納多出一個房間
 date: 2026-07-15
 summary: 室內設計與系統櫃的合作，讓屋主省下一筆家具預算。
-members: [sample-design-01, sample-design-02]
-roles:
-  sample-design-01: 格局與風格規劃
-  sample-design-02: 系統櫃收納設計
+members: []
+roles: {}
 tags: [Power Team, 範例]
 cover: ""
 heroImage: ""

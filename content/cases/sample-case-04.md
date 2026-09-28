@@ -2,10 +2,8 @@
 title: 家族企業交棒，三種專業坐同一張桌子
 date: 2026-06-15
 summary: 會計師牽線，品牌顧問接手，把傳承變成第二次創業。
-members: [sample-service-01, sample-marketing-01]
-roles:
-  sample-service-01: 傳承稅務規劃
-  sample-marketing-01: 第二代品牌重塑
+members: []
+roles: {}
 tags: [Power Team, 範例]
 cover: ""
 heroImage: ""

@@ -135,7 +135,7 @@ export default function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
               return (
                 <div key={s.slug} aria-hidden={!on}
                   className={`absolute inset-x-0 bottom-20 md:bottom-auto md:top-1/2 md:-translate-y-1/2 md:w-[48%] transition-all ease-out ${on ? "opacity-100 translate-x-0 pointer-events-auto duration-700 delay-300" : "opacity-0 -translate-x-6 duration-300"}`}>
-                  <div className="eyebrow text-accent">Case {pad(idx + 1)} · Power Team {s.memberCount} 人協作</div>
+                  <div className="eyebrow text-accent">Case {pad(idx + 1)}{s.memberCount > 0 && ` · Power Team ${s.memberCount} 人協作`}</div>
                   <h1 className="headline text-[2rem] leading-[1.18] md:text-6xl md:leading-[1.15] mt-4">{s.title}</h1>
                   <p className="mt-5 text-muted leading-8 max-w-md line-clamp-2 md:line-clamp-none">{s.summary}</p>
                   <Link href={`/cases/${s.slug}`} tabIndex={on ? 0 : -1}

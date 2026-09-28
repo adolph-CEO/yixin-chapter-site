@@ -40,23 +40,25 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
     <Column>
       <JsonLd data={[caseArticle(c, members), breadcrumb([{ name: "案例", path: "/cases" }, { name: c.title, path: `/cases/${c.slug}` }])]} />
       <header>
-        <div className="text-[11px] tracking-[0.2em] text-muted">{c.date}．{members.length} 位會員協作</div>
+        <div className="text-[11px] tracking-[0.2em] text-muted">{[c.date, members.length ? `${members.length} 位會員協作` : ""].filter(Boolean).join("．")}</div>
         <h1 className="headline text-3xl md:text-5xl mt-4 leading-[1.25]">{c.title}</h1>
         <p className="mt-5 text-lg text-muted leading-8">{c.summary}</p>
       </header>
 
       {/* 標籤區：這個案例跨了哪些產業、哪些夥伴 */}
       <div className="mt-8 border-y border-line py-3 divide-y divide-line">
-        <TagRow label="跨產業">{industries.map((i) => <IndustryTag key={i} name={i} />)}</TagRow>
-        <TagRow label="合作夥伴">
-          {members.map((m) => <PartnerTag key={m.slug} slug={m.slug} name={m.name} photo={m.photo} />)}
-        </TagRow>
+        {industries.length > 0 && <TagRow label="跨產業">{industries.map((i) => <IndustryTag key={i} name={i} />)}</TagRow>}
+        {members.length > 0 && (
+          <TagRow label="合作夥伴">
+            {members.map((m) => <PartnerTag key={m.slug} slug={m.slug} name={m.name} photo={m.photo} />)}
+          </TagRow>
+        )}
         {c.tags.length > 0 && <TagRow label="標籤">{c.tags.map((t) => <PlainTag key={t} name={t} />)}</TagRow>}
       </div>
 
       <Img src={c.cover} alt={c.title} className="mt-10 w-full aspect-[16/10] rounded-2xl overflow-hidden" />
 
-      <Block title="這次的分工">
+      {members.length > 0 && <Block title="這次的分工">
         <div className="grid sm:grid-cols-2 gap-4">
           {members.map((m) => (
             <Link key={m.slug} href={`/members/${m.slug}`} className="group flex gap-4 items-start rounded-2xl bg-soft p-5 hover:bg-[#ebebe7] transition">
@@ -69,7 +71,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
             </Link>
           ))}
         </div>
-      </Block>
+      </Block>}
 
       <Block title="案例故事">
         <div className="prose-yx" dangerouslySetInnerHTML={{ __html: c.html }} />

@@ -2,11 +2,8 @@
 title: 一通轉介紹，串起一座新廠房
 date: 2026-09-15
 summary: 從土地到機電，三位會員組成工程產業鏈 Power Team，接下整案。
-members: [sample-engineering-01, sample-engineering-02, sample-design-01]
-roles:
-  sample-engineering-01: 機電統包與無塵室
-  sample-engineering-02: 主體營造與鋼構
-  sample-design-01: 辦公區室內規劃
+members: []
+roles: {}
 tags: [Power Team, 範例]
 cover: ""
 heroImage: "/images/cases/sample-case-01-hero.webp"
