@@ -5,7 +5,7 @@ title: ""
 industry: "營建工程"
 specialty: "防潮石膏磚"
 order: 2
-photo: ""
+photo: "/images/members/liu-ting-yu.webp"
 skills: []
 seekingPartners: []
 valueFuture: ""

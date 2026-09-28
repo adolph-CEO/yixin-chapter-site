@@ -5,7 +5,7 @@ title: ""
 industry: "營建工程"
 specialty: "商業建築商"
 order: 15
-photo: ""
+photo: "/images/members/zhang-geng-wei.webp"
 skills: []
 seekingPartners: []
 valueFuture: ""

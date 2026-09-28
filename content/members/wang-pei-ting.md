@@ -5,7 +5,7 @@ title: ""
 industry: "空間與設計"
 specialty: "花藝軟裝設計業"
 order: 7
-photo: ""
+photo: "/images/members/wang-pei-ting.webp"
 skills: []
 seekingPartners: []
 valueFuture: ""

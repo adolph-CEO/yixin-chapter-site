@@ -119,7 +119,7 @@ export default async function MemberPage({ params }: { params: Promise<{ slug: s
       {/* 轉換出口（受眾 B） */}
       <section id="contact" className="mt-16 md:mt-20 rounded-2xl bg-indigo text-white p-7 md:p-10 scroll-mt-28">
         <div className="eyebrow text-white/50">Let&apos;s work together</div>
-        <h2 className="headline text-2xl md:text-3xl mt-3">需要{m.specialty}？</h2>
+        <h2 className="headline text-2xl md:text-3xl mt-3">想和{m.name}合作嗎？</h2>
         {contacts.length > 0 ? (
           <>
           <p className="mt-3 text-white/70 text-sm leading-7">直接聯絡{m.name}，或透過億鑫分會引薦，我們會把對的人介紹給你。</p>

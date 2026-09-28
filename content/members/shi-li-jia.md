@@ -5,7 +5,7 @@ title: ""
 industry: "金融與不動產"
 specialty: "人壽和傷殘保險"
 order: 5
-photo: ""
+photo: "/images/members/shi-li-jia.webp"
 skills: []
 seekingPartners: []
 valueFuture: ""

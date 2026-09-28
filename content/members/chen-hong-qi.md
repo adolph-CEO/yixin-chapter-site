@@ -5,7 +5,7 @@ title: ""
 industry: "科技與行銷"
 specialty: "網路行銷"
 order: 19
-photo: ""
+photo: "/images/members/chen-hong-qi.webp"
 skills: []
 seekingPartners: []
 valueFuture: ""

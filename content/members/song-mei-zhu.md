@@ -5,7 +5,7 @@ title: ""
 industry: "金融與不動產"
 specialty: "台南房屋代銷業,馬來西亞國際地產顧問"
 order: 13
-photo: ""
+photo: "/images/members/song-mei-zhu.webp"
 skills: []
 seekingPartners: []
 valueFuture: ""

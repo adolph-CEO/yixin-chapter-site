@@ -5,7 +5,7 @@ title: ""
 industry: "科技與行銷"
 specialty: "企業資源規劃軟件"
 order: 21
-photo: ""
+photo: "/images/members/liu-hua-xing.webp"
 skills: []
 seekingPartners: []
 valueFuture: ""

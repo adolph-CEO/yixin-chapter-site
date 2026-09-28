@@ -5,7 +5,7 @@ title: ""
 industry: "製造與貿易"
 specialty: "電氣設備製造"
 order: 12
-photo: ""
+photo: "/images/members/huang-zheng-zhong.webp"
 skills: []
 seekingPartners: []
 valueFuture: ""

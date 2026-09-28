@@ -5,7 +5,7 @@ title: ""
 industry: "居家生活"
 specialty: "整理收納業"
 order: 20
-photo: ""
+photo: "/images/members/zhu-jing-shan.webp"
 skills: []
 seekingPartners: []
 valueFuture: ""

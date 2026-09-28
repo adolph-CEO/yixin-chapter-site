@@ -5,7 +5,7 @@ title: ""
 industry: "營建工程"
 specialty: "太陽能"
 order: 6
-photo: ""
+photo: "/images/members/huang-guo-yan.webp"
 skills: []
 seekingPartners: []
 valueFuture: ""

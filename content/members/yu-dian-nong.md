@@ -5,7 +5,7 @@ title: ""
 industry: "空間與設計"
 specialty: "餐飲空間設計"
 order: 4
-photo: ""
+photo: "/images/members/yu-dian-nong.webp"
 skills: []
 seekingPartners: []
 valueFuture: ""

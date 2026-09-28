@@ -5,7 +5,7 @@ title: ""
 industry: "營建工程"
 specialty: "門窗"
 order: 18
-photo: ""
+photo: "/images/members/qiu-lian-ping.webp"
 skills: []
 seekingPartners: []
 valueFuture: ""

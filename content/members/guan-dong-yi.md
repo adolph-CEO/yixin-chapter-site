@@ -5,7 +5,7 @@ title: ""
 industry: "營建工程"
 specialty: "室內裝修工程"
 order: 11
-photo: ""
+photo: "/images/members/guan-dong-yi.webp"
 skills: []
 seekingPartners: []
 valueFuture: ""

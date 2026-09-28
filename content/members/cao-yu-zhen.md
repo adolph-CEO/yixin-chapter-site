@@ -5,7 +5,7 @@ title: ""
 industry: "空間與設計"
 specialty: "平面設計師"
 order: 17
-photo: ""
+photo: "/images/members/cao-yu-zhen.webp"
 skills: []
 seekingPartners: []
 valueFuture: ""

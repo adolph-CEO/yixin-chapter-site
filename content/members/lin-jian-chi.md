@@ -5,7 +5,7 @@ title: ""
 industry: "製造與貿易"
 specialty: "國際貿易"
 order: 9
-photo: ""
+photo: "/images/members/lin-jian-chi.webp"
 skills: []
 seekingPartners: []
 valueFuture: ""

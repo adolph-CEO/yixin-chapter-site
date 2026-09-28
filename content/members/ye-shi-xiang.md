@@ -5,7 +5,7 @@ title: ""
 industry: "居家生活"
 specialty: "家具製造"
 order: 1
-photo: ""
+photo: "/images/members/ye-shi-xiang.webp"
 skills: []
 seekingPartners: []
 valueFuture: ""

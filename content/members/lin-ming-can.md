@@ -5,7 +5,7 @@ title: ""
 industry: "教育與餐飲"
 specialty: "餐飲業者"
 order: 10
-photo: ""
+photo: "/images/members/lin-ming-can.webp"
 skills: []
 seekingPartners: []
 valueFuture: ""

@@ -5,7 +5,7 @@ title: ""
 industry: "教育與餐飲"
 specialty: "學習中心"
 order: 8
-photo: ""
+photo: "/images/members/guo-zhan-you.webp"
 skills: []
 seekingPartners: []
 valueFuture: ""
