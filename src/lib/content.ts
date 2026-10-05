@@ -26,6 +26,10 @@ export type Member = {
   photo: string;
   skills: { name: string; desc: string }[];
   seekingPartners: string[];
+  /** 理想客戶（最好的引薦對象） */
+  idealClients: string[];
+  /** 聽到這些話，就是可以引薦的時機 */
+  referralCues: string[];
   valueFuture: string;
   contact: Contact;
   html: string;
@@ -96,6 +100,8 @@ export function getMembers(): Member[] {
       typeof x === "string" ? { name: x, desc: "" } : { name: str((x as Record<string, unknown>).name), desc: str((x as Record<string, unknown>).desc) }
     ),
     seekingPartners: arr(d.seekingPartners),
+    idealClients: arr(d.idealClients),
+    referralCues: arr(d.referralCues),
     valueFuture: str(d.valueFuture),
     contact: (d.contact as Contact) ?? {},
     html: marked.parse(body) as string,

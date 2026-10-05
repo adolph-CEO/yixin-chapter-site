@@ -18,6 +18,7 @@ export function GET() {
         `- [${m.name}｜${m.company}](${abs(`/members/${m.slug}`)})：${m.industry}，專業代表：${m.specialty}。`,
         m.skills.length ? `擅長${m.skills.map((s) => s.name).join("、")}。` : "",
         m.seekingPartners.length ? `想找的合作夥伴：${m.seekingPartners.join("、")}。` : "",
+        m.idealClients.length ? `理想客戶：${m.idealClients.join("、")}。` : "",
       ].join("")
     ),
     "",

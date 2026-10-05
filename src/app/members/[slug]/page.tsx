@@ -99,6 +99,23 @@ export default async function MemberPage({ params }: { params: Promise<{ slug: s
         </Block>
       )}
 
+      {(m.idealClients.length > 0 || m.referralCues.length > 0) && (
+        <Block title="怎麼幫我引薦">
+          <div className="grid sm:grid-cols-2 gap-4">
+            {m.idealClients.length > 0 && (
+              <SoftCard title="我的理想客戶">
+                <ul className="mt-1 space-y-1.5">{m.idealClients.map((x) => <li key={x}>・{x}</li>)}</ul>
+              </SoftCard>
+            )}
+            {m.referralCues.length > 0 && (
+              <SoftCard title="聽到這些話，就想到我">
+                <ul className="mt-1 space-y-1.5">{m.referralCues.map((x) => <li key={x}>「{x}」</li>)}</ul>
+              </SoftCard>
+            )}
+          </div>
+        </Block>
+      )}
+
       {m.valueFuture && (
         <Block title="未來能創造的價值">
           <p className="text-xl md:text-2xl font-bold leading-relaxed border-l-4 border-accent pl-5">{m.valueFuture}</p>
