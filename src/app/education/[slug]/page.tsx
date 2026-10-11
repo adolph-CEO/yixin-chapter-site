@@ -9,6 +9,9 @@ import JsonLd from "@/components/JsonLd";
 import { getCases, getEducation, getMembers, industriesOf, neighbors, pad2, sortByStrokes } from "@/lib/content";
 import { breadcrumb, lessonArticle } from "@/lib/schema";
 
+/** 只產生已發布的週次；待發布的網址一律 404 */
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return getEducation().map((e) => ({ slug: e.slug }));
 }

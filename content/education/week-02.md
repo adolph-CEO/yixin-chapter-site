@@ -1,34 +1,43 @@
 ---
-title: 轉介紹不是人情，是你交出去的信用
+title: "共同語言，讓溝通少一半時間"
 week: 2
-date: 2026-10-08
-summary: 夥伴敢把客戶交給你，是因為你過去每一次的準時與透明。
+published: false
+pillar: "培訓"
+worldCase: "麥當勞漢堡大學"
+date: ""
+summary: "有計畫學習的人更容易成功；培訓的目的，是讓整個分會講同一種語言。"
 podcast:
-  episode: "000"
-  titleEn: "Original English episode title (待填)"
-  url: "https://www.bnipodcast.com/episodes/"
-relatedCases: [sample-case-02]
-tags: [範例]
+  episode: "651"
+  titleEn: "How to Use the BNI Podcast"
+  url: "https://www.bnipodcast.com/2020/04/15/episode-652-how-to-use-the-bni-podcast-classic-podcast/"
+relatedCases: []
+tags: ["培訓"]
 cover: ""
 ---
-這一週的核心觀點寫在第一段，一句話講完。
+## 麥當勞漢堡大學
+
+（世界案例破題，待撰寫）
 
 ---
 
-## Podcast 說了什麼
-用自己的話摘要原集重點，兩到三段就夠。不貼大段逐字稿。
+## 本週基本功：培訓
+
+（Podcast 三關鍵與觀點，待撰寫）
 
 ---
 
-## 分會裡的真實案例
-連結到對應的案例，說明這個觀點在我們分會怎麼發生。
+## 本週案例
+
+（待補）
 
 ---
 
-## 背後的專業與品格
-這個成果是因為哪些行為：準時、透明、負責。
+## 會員分享 30 秒
+
+（待約）
 
 ---
 
-## 這週就能做的一件事
-給會員一個具體、下週例會前就能完成的行動。
+## 待會分組，照這三步走
+
+（討論題、討論方法、執行技巧，待撰寫）

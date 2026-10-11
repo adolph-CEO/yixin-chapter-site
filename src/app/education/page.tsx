@@ -3,21 +3,27 @@ import JsonLd from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/schema";
 import PostCard from "@/components/PostCard";
 import SectionTitle from "@/components/SectionTitle";
-import { getEducation, pad2 } from "@/lib/content";
+import { getEducationSchedule, pad2 } from "@/lib/content";
 
-export const metadata: Metadata = { title: "教育", description: "每週一堂 BNI 商務價值應用，搭配億鑫分會的真實案例。", alternates: { canonical: "/education" }, openGraph: { title: "教育", description: "每週一堂 BNI 商務價值應用，搭配億鑫分會的真實案例。", url: "/education", images: ["/og.png"] } };
+const DESC = "第五屆鑫想事成時間：22 週，把 BNI 五大基本功變成五個增加收入的方法。每篇都標註原始 Podcast 的出處。";
+
+export const metadata: Metadata = { title: "教育", description: DESC, alternates: { canonical: "/education" }, openGraph: { title: "教育", description: DESC, url: "/education", images: ["/og.png"] } };
 
 export default function EducationPage() {
-  const list = getEducation();
+  const list = getEducationSchedule(); // 課表：W1 到 W22，含待發布
+  const done = list.filter((e) => e.published).length;
   return (
     <>
       <JsonLd data={breadcrumb([{ name: "教育", path: "/education" }])} />
       <div className="mx-auto max-w-7xl px-4 md:px-8 py-14 md:py-20">
-      <SectionTitle eyebrow="BNI Business Value" title="教育" desc="每週例會的教育時間，整理成可以回頭查閱的文章。每篇都標註原始 Podcast 的出處。" />
+      <SectionTitle eyebrow="BNI Business Value" title="教育"
+        desc={`${DESC}目前已發布 ${done} / ${list.length} 週，每週例會後上架。`} />
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
         {list.map((e) => (
-          <PostCard key={e.slug} href={`/education/${e.slug}`} title={e.title} image={e.cover}
-            badge={`WEEK ${pad2(e.week)}`} meta={[e.date, e.podcast.episode ? `Podcast EP.${e.podcast.episode}` : ""]} excerpt={e.summary} />
+          <PostCard key={e.slug} href={`/education/${e.slug}`} title={e.title} image={e.cover} pending={!e.published}
+            badge={`WEEK ${pad2(e.week)}`}
+            meta={[e.pillar, e.published ? e.date : "", e.podcast.episode ? `Podcast EP.${e.podcast.episode}` : ""]}
+            excerpt={e.summary} />
         ))}
       </div>
     </div>

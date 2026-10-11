@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 import Presenter from "@/components/Presenter";
 import { getEducation, pad2, site, toSlides } from "@/lib/content";
 
+/** 只產生已發布的週次；待發布的網址一律 404 */
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return getEducation().map((e) => ({ slug: e.slug }));
 }

@@ -56,6 +56,12 @@ export type Education = {
   slug: string;
   title: string;
   week: number;
+  /** 是否已發布；false 時只在教育列表顯示「待發布」，不產生內頁 */
+  published: boolean;
+  /** 本週的五大基本功：出席、培訓、一對一、引薦、來賓 */
+  pillar: string;
+  /** 本週的世界案例（破題用） */
+  worldCase: string;
   date: string;
   summary: string;
   podcast: { episode: string; titleEn: string; url: string };
@@ -165,13 +171,17 @@ export function getFeaturedCases(limit = 4): Case[] {
     .slice(0, limit);
 }
 
-export function getEducation(): Education[] {
+/** 全部週次（含待發布），依週次由小到大，給教育列表當課表用 */
+export function getEducationSchedule(): Education[] {
   return readDir("education", (slug, d, body) => {
     const p = (d.podcast as Record<string, unknown>) ?? {};
     return {
       slug,
       title: str(d.title),
       week: Number(d.week ?? 0),
+      published: d.published === true,
+      pillar: str(d.pillar),
+      worldCase: str(d.worldCase),
       date: toDate(d.date),
       summary: str(d.summary),
       podcast: { episode: str(p.episode), titleEn: str(p.titleEn), url: str(p.url) },
@@ -181,7 +191,12 @@ export function getEducation(): Education[] {
       body,
       html: marked.parse(body.replace(/^\s*---\s*$/gm, "")) as string,
     };
-  }).sort((a, b) => b.week - a.week);
+  }).sort((a, b) => a.week - b.week);
+}
+
+/** 已發布的週次，依週次新到舊。內頁、投影、sitemap、llms.txt 都只用這份 */
+export function getEducation(): Education[] {
+  return getEducationSchedule().filter((e) => e.published).reverse();
 }
 
 /** 投影模式：以單獨一行的 --- 切成一張張投影片 */
