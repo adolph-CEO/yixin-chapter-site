@@ -1,7 +1,7 @@
 ---
 title: "五大基本功，是五個賺錢的動作"
 week: 1
-published: false
+published: true
 pillar: "出席"
 worldCase: "鼎泰豐"
 date: 2026-10-16
