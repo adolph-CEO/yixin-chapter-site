@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumb } from "@/lib/schema";
 import PostCard from "@/components/PostCard";
+import BniBackdrop from "@/components/BniBackdrop";
 import SectionTitle from "@/components/SectionTitle";
 import { getEducationSchedule, pad2 } from "@/lib/content";
 
@@ -15,11 +16,7 @@ export default function EducationPage() {
   return (
     <>
       <JsonLd data={breadcrumb([{ name: "教育", path: "/education" }])} />
-      {/* 背景：由小點串成的 BNI，固定在畫面中央不隨捲動，寬度約佔畫面八成 */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/images/bni-dots.svg" alt="" aria-hidden="true"
-        className="pointer-events-none select-none fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-[46%] z-0 opacity-[0.13]"
-        style={{ width: "min(80vw, 171vh)" }} />
+      <BniBackdrop />
       <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-8 py-14 md:py-20">
       <SectionTitle eyebrow="BNI Business Value" title="教育"
         desc={`${DESC}目前已發布 ${done} / ${list.length} 週，每週例會後上架。`} />

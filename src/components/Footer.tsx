@@ -3,7 +3,7 @@ import { site } from "@/lib/content";
 
 export default function Footer() {
   return (
-    <footer className="bg-dark text-white/70">
+    <footer className="relative z-10 bg-dark text-white/70">
       <div className="mx-auto max-w-7xl px-4 md:px-8 py-14 grid gap-10 md:grid-cols-3">
         <div>
           <div className="headline text-2xl text-white">{site.chapterName}</div>
