@@ -27,7 +27,7 @@ export default function BniBackdrop() {
 
   return (
     <img ref={ref} src="/images/bni-dots.svg" alt="" aria-hidden="true"
-      className="pointer-events-none select-none fixed left-1/2 top-1/2 z-0 opacity-[0.104] will-change-transform"
+      className="pointer-events-none select-none fixed left-1/2 top-1/2 z-0 opacity-[0.078] will-change-transform"
       style={{ width: "min(80vw, 171vh)", transform: "translate3d(-50%, calc(-46% + var(--drift, 0px)), 0)" }} />
   );
 }
