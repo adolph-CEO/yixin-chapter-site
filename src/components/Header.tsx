@@ -16,9 +16,8 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-paper/95 backdrop-blur border-b border-line pt-1">
       <div className="mx-auto max-w-7xl px-4 md:px-8 h-16 md:h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span aria-hidden className="flex flex-col gap-[3px]"><span className="block w-2.5 h-2.5 bg-accent" /><span className="block w-2.5 h-2.5 bg-indigo" /></span>
-          <span className="headline text-xl md:text-2xl text-indigo">億鑫分會</span>
-          <span className="eyebrow text-accent hidden sm:inline">Yixin Chapter</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/brand-logo.png" alt="億鑫分會 Yixin Chapter" width={422} height={210} className="h-12 md:h-[60px] w-auto" />
         </Link>
         <nav className="hidden md:flex items-center gap-10">
           {NAV.map((n) => {

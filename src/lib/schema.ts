@@ -6,7 +6,7 @@ export const chapterOrg = () => ({
   name: site.chapterName,
   alternateName: site.chapterNameEn,
   url: abs("/"),
-  logo: abs("/icon.svg"),
+  logo: abs("/images/brand-logo.png"),
   description: site.description,
   parentOrganization: { "@type": "Organization", name: "BNI" },
 });
