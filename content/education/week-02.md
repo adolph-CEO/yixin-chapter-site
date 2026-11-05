@@ -61,7 +61,7 @@ cover: "/images/education/week-02-hamburger-university.webp"
 
 **經常培訓，就是在降低溝通成本，提升運作效率。**
 
-這次一起協作的夥伴：[張耿維](/members/zhang-geng-wei)（日式清水模）、[劉亭妤](/members/liu-ting-yu)（自流平、輕隔間）、[官東億](/members/guan-dong-yi)（裝修工程）；異業：[陳鋐豈](/members/chen-hong-qi)（網路行銷）、[吳瑋祈](/members/wu-wei-qi)（國際精品貿易）
+這次一起協作的夥伴：[張耿維](/members/zhang-geng-wei)（日式清水模）、[劉亭妤](/members/liu-ting-yu)（自流平、輕隔間）、[官東億](/members/guan-dong-yi)（水電工程）；異業：[陳鋐豈](/members/chen-hong-qi)（網路行銷）、[吳瑋祈](/members/wu-wei-qi)（國際精品貿易）
 
 ---
 
