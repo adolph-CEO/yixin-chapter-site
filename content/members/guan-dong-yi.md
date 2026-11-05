@@ -1,7 +1,7 @@
 ---
 name: "官東億"
 company: "斯力克開發有限公司"
-title: "業務經理"
+title: "負責人"
 industry: "營建工程"
 specialty: "水電工程、室內外裝修設計與工程"
 order: 11
